@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title>GameRect</title>
+            <meta charset='utf-8' />
+            <link
+             rel="stylesheet" type="text/css" href="css/game_style_base.css" />
+        </head>
+        <body>
+            <div id="start">
+                <p style="text-align: center; font-size: 43px; font-weight:bold;">"Квадратики"</p>
+                <p>В этой игре вам необходимо найти такой же квадратик, как и в образце сверху экрана и перетащить его в поле для проверки и нажать на кнопку.
+                Квадратики можно вращать путем нажатия клавиши пробел</p>
+                <p>Каждый уровень отличается количеством квадратиков, их ячеек и возможными цветов внутри них</p>
+                <p>Всего в игре 3 уровня, каждый ограничен числом попыток и временем</p>
+                <p>Приятной игры!</p>
+                <br>
+                <p><button id="new_game_button" onclick="new_game()">Новая игра</button></p>
+                <div id="name_player">
+                    <p style="font-weight:bold;">Введите ваше имя</p>
+                    <p style="text-align: left; font-size: 20px;">*имя нужно ввести только один раз</p>
+                    <input type="text" class="form-control" id="name_input" />
+                    <button onclick="input_name()"  class="btn" >Подтвердить</button>
+                </div>
+                <p style="font-weight:bold; font-size: 25px; position: absolute; top: 105%; left: 50%; transform: translate(-50%, -50%);">Мельникова Эмилия, 2020</p>
+            </div>
+            <content id="game">
+                <p id="time"></p>
+                <p id="pops"></p>
+                <p id="level"></p>
+                <p><button id='id' onclick="click_button()">Проверить</button></p>
+                <script src="js/onload.js"></script>
+                <canvas id='main_rect'>Проверка на ошибки</canvas>
+                <canvas id='answer_rect' class='put_in'></canvas>
+                <script src="js/time.js"></script>
+            </content>
+            <div id="good">
+                <p>Поздравляем!!</p>
+                <p id='score'></p>
+                <p><button onclick="new_game_new()">Новая игра</button></p>
+                <p class="btnSave"><button onclick = "result_save()">Результаты</button></p>
+            </div>
+            <div id="bad">
+                <p>Game Over</p>
+                <p id='score'></p>
+                <p><button onclick="new_game_new()">Новая игра</button></p>
+                <p class="btnSave"><button onclick = "result_save()">Результаты</button></p>
+            </div>
+        </body>
+    </html>
